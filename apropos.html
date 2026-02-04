@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmileCare – Cabinet dentaire moderne à Kenitra, spécialisé en soins bucco-dentaires pour adultes et enfants.">
+    <meta name="keywords" content="dentiste, cabinet dentaire, soins dentaires, orthodontie, Kenitra">
+    <meta name="author" content="SmileCare">
+    <title>SmileCare – Cabinet Dentaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<header class="fade-in">
+    <div class="container header-container">
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Logo SmileCare – Cabinet Dentaire" class="logo">
+            <h1>SmileCare – Cabinet Dentaire</h1>
+        </div>
+        <!-- Bouton avec trois points verticaux pour mobile -->
+        <button class="hamburger" aria-label="Ouvrir le menu">
+            <i class="fas fa-ellipsis-vertical"></i>
+        </button>
+        <nav aria-label="Menu principal" class="nav-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html" class="active">À propos</a></li>
+                <li><a href="traitements.html">Nos Traitements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Script JS pour toggle menu avec transition douce -->
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+</script>
+
+<!-- SECTION DOCTEUR (intégrée ici, avec animation) -->
+<section id="docteur" class="section light fade-in">
+    <div class="container doctor-container">
+        <img src="images/docteur.jpg" alt="Dr. Megder Fatima-Zahra, dentiste spécialisée" class="doctor-img">
+        <div class="doctor-info">
+            <h2>Dr. Megder Fatima-Zahra</h2>
+            <p>
+                Diplômée en chirurgie dentaire avec plusieurs années d’expérience, la Dr. Megder Fatima-Zahra est spécialisée
+                en soins esthétiques et orthodontie. Elle adopte une approche douce, professionnelle et attentive aux besoins de chaque patient.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION A PROPOS (avec animation fade-in) -->
+<section id="apropos" class="section fade-in">
+    <div class="container">
+        <h2>À propos de notre cabinet</h2>
+        <p>
+            Notre cabinet dentaire est équipé de technologies modernes pour assurer des soins précis, confortables et sécurisés.
+            Nous respectons les normes d’hygiène les plus strictes et accueillons aussi bien les adultes que les enfants.
+            Notre mission est de vous offrir un sourire sain et éclatant.
+        </p>
+    </div>
+</section>
+
+<footer class="fade-in">
+    <div class="container">
+        <p>&copy; 2026 SmileCare – Cabinet Dentaire. Tous droits réservés.</p>
+    </div>
+</footer>
+
+</body>
+</html>

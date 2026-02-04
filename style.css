@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    overflow-x: hidden; /* Empêche les débordements horizontaux */
+}
+/* ANIMATIONS FLUIDES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0; /* Commence invisible pour l'animation */
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+/* HEADER */
+header {
+    background: #0aa3d4;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 70px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+nav ul li + li::before {
+    content: '';
+    position: absolute;
+    left: -12.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 1em;
+    background: rgba(255, 255, 255, 0.3);
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+nav ul li a:hover {
+    color: #f0f0f0;
+    transform: translateY(-2px); /* Animation fluide sur hover */
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: white;
+    transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+nav ul li a.active::after {
+    width: 100%;
+}
+/* HERO (Accueil adapté à toute la disposition) */
+.hero {
+    background: url("images/cabinet.jpg") center/cover no-repeat;
+    min-height: 100vh; /* Remplit toute la hauteur disponible, sans vide */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Zéro marge pour coller au header/footer */
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35); /* Overlay pour lisibilité */
+}
+.hero-text {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    font-size: 1.2em;
+    line-height: 1.6;
+    transition: transform 0.5s ease; /* Animation fluide */
+}
+.hero-text:hover {
+    transform: scale(1.02); /* Légère mise en avant sur hover */
+}
+/* SECTIONS */
+.section {
+    padding: 80px 0;
+    transition: background 0.5s ease; /* Transition fluide pour changements de fond */
+}
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0aa3d4;
+    font-size: 2em;
+    position: relative;
+}
+.section h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #0aa3d4;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+.section h2:hover::after {
+    width: 80px; /* Animation sur hover pour dynamisme */
+}
+.section p {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1em;
+}
+.light {
+    background: #f9fcff;
+}
+/* DOCTOR */
+.doctor-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+}
+.doctor-img {
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.doctor-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Ombre plus prononcée sur hover */
+}
+.doctor-info {
+    max-width: 600px;
+}
+/* TRAITEMENTS */
+.traitements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+.traitement-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.traitement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+.traitement-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+.traitement-img:hover {
+    opacity: 0.9;
+}
+.traitement-info h3 {
+    font-size: 1.5em;
+    color: #0aa3d4;
+    margin-bottom: 15px;
+}
+.traitement-info p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.traitement-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+.traitement-info li {
+    margin-bottom: 10px;
+}
+/* CONTACT */
+#contact p {
+    text-align: left;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+#contact p:hover {
+    color: #0aa3d4; /* Changement de couleur fluide sur hover */
+}
+#contact i {
+    color: #0aa3d4;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+#contact i:hover {
+    transform: rotate(10deg); /* Rotation légère pour interactivité */
+}
+.map {
+    margin-top: 30px;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+.map:hover {
+    opacity: 0.9; /* Légère transparence sur hover */
+}
+/* FOOTER */
+footer {
+    background: #0aa3d4;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0;
+}
+/* RESPONSIVE (adapté à tous les appareils : téléphone, PC, iPad) */
+@media (max-width: 1024px) { /* Pour iPad et tablettes */
+    .container {
+        max-width: 900px;
+    }
+    .hero-text {
+        max-width: 80%;
+    }
+    .doctor-container {
+        gap: 30px;
+    }
+    .traitements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) { /* Pour téléphones et petits écrans */
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    nav ul li {
+        margin: 15px 0;
+    }
+    nav ul li + li::before {
+        display: none;
+    }
+    .hero {
+        min-height: 100vh; /* Plein écran sur mobile */
+        padding: 20px; /* Espace pour éviter chevauchement */
+    }
+    .hero-text {
+        padding: 20px;
+        font-size: 1.1em; /* Texte lisible sur petit écran */
+    }
+    .doctor-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .traitement-item {
+        padding: 15px;
+    }
+    .traitement-img {
+        max-width: 200px;
+    }
+}
+@media (max-width: 480px) { /* Pour écrans très petits (ex. : iPhone SE) */
+    h1 {
+        font-size: 1.5em;
+    }
+    .hero-text {
+        font-size: 1em;
+        padding: 15px;
+    }
+    .section {
+        padding: 60px 0;
+    }
+    .map iframe {
+        height: 250px; /* Ajustement pour petits écrans */
+    }
+}
+/* HAMBURGER MENU (avec trois points et transition douce) */
+.hamburger {
+    display: none; /* Caché par défaut sur grand écran */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.hamburger.active {
+    transform: rotate(90deg); /* Rotation pour passer de vertical à horizontal */
+}
+.nav-menu {
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transition douce pour ouverture/fermeture avec opacité */
+    opacity: 1;
+}
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+/* RESPONSIVE (adapté pour hamburger sur mobile) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Visible sur mobile */
+    }
+    .nav-menu {
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0aa3d4;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0; /* Commence transparent pour animation douce */
+    }
+    .nav-menu.active {
+        max-height: 300px; /* Hauteur max pour ouverture */
+        opacity: 1; /* Apparaît doucement */
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .nav-menu li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .nav-menu ul li:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Séparateur blanc transparent */
+        padding-bottom: 15px;
+    }
+}

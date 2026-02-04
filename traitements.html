@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmileCare – Cabinet dentaire moderne à Kenitra, spécialisé en soins bucco-dentaires pour adultes et enfants.">
+    <meta name="keywords" content="dentiste, cabinet dentaire, soins dentaires, orthodontie, Kenitra">
+    <meta name="author" content="SmileCare">
+    <title>SmileCare – Cabinet Dentaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<header class="fade-in">
+    <div class="container header-container">
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Logo SmileCare – Cabinet Dentaire" class="logo">
+            <h1>SmileCare – Cabinet Dentaire</h1>
+        </div>
+        <!-- Bouton avec trois points verticaux pour mobile -->
+        <button class="hamburger" aria-label="Ouvrir le menu">
+            <i class="fas fa-ellipsis-vertical"></i>
+        </button>
+        <nav aria-label="Menu principal" class="nav-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="traitements.html" class="active">Nos Traitements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Script JS pour toggle menu avec transition douce -->
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+</script>
+
+<!-- SECTION NOS TRAITEMENTS (avec animation fade-in) -->
+<section id="traitements" class="section light fade-in">
+    <div class="container">
+        <h2>Nos Traitements</h2>
+        <div class="traitements-grid">
+            <!-- Traitement de Base -->
+            <div class="traitement-item">
+                <div class="traitement-info">
+                    <h3>Traitement de Base</h3>
+                    <img src="images/traitement-base.jpg" alt="Illustration de traitement de base dentaire" class="traitement-img">
+                    <p>Nos traitements de base visent à maintenir une hygiène bucco-dentaire optimale et à prévenir les problèmes futurs. Ils incluent :</p>
+                    <ul>
+                        <li>Consultations préventives : Évaluations régulières pour détecter les problèmes précoces.</li>
+                        <li>Détartrage et nettoyage professionnel : Élimination de la plaque et du tartre pour un sourire sain.</li>
+                        <li>Traitement des caries : Réparation des dents endommagées pour restaurer leur fonction et esthétique.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chirurgie & Orthodontie -->
+            <div class="traitement-item">
+                <div class="traitement-info">
+                    <h3>Chirurgie & Orthodontie</h3>
+                    <img src="images/chirurgie-orthodontie.jpg" alt="Illustration de chirurgie et orthodontie dentaire" class="traitement-img">
+                    <p>Nos interventions chirurgicales et orthodontiques sont réalisées avec précision et soin pour corriger les problèmes structurels. Elles incluent :</p>
+                    <ul>
+                        <li>Extractions et implants dentaires : Remplacement de dents manquantes pour restaurer le sourire.</li>
+                        <li>Chirurgie parodontale : Traitement des gencives pour prévenir les maladies parodontales.</li>
+                        <li>Orthodontie et alignement : Correction des malpositions dentaires pour un sourire harmonieux.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Esthétique Dentaire -->
+            <div class="traitement-item">
+                <div class="traitement-info">
+                    <h3>Esthétique Dentaire</h3>
+                    <img src="images/esthetique-dentaire.jpg" alt="Illustration d'esthétique dentaire" class="traitement-img">
+                    <p>Nos soins esthétiques améliorent l'apparence de votre sourire de manière naturelle et durable. Ils incluent :</p>
+                    <ul>
+                        <li>Facettes dentaires : Correction des imperfections pour un sourire éclatant.</li>
+                        <li>Prothèses dentaires : Restauration personnalisée pour un confort optimal.</li>
+                        <li>Blanchiment dentaire : Éclaircissement des dents pour un sourire plus blanc et lumineux.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="fade-in">
+    <div class="container">
+        <p>&copy; 2026 SmileCare – Cabinet Dentaire. Tous droits réservés.</p>
+    </div>
+</footer>
+
+</body>
+</html>
